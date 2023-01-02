@@ -1,0 +1,33 @@
+import { addDoc, collection } from "firebase/firestore";
+//import { uuidv4 } from "@firebase/util";
+import { db } from "../firebase";
+const jsonData = require("../data/stadiums.json");
+
+export default function dataHandle() {
+  const stadiumsArray = [];
+
+  for (let i in jsonData) {
+    stadiumsArray.push(jsonData[i]);
+  }
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+
+    stadiumsArray.forEach(async (stad) => {
+      const docRef = await addDoc(collection(db, "stadiums"), stad);
+      console.log(docRef.data());
+    });
+  };
+
+  // console.log(stadiumsArray[0]);
+  return (
+    <form onSubmit={onSubmit}>
+      <div className="text-center font-bold text-xxl mt-10">
+        <h1>Wow</h1>
+        <button type="submit" className="bg-blue-700 text-white">
+          Button
+        </button>
+      </div>
+    </form>
+  );
+}
