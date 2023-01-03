@@ -47,7 +47,7 @@ function Navbar() {
             <div className="flex md:order-1">
               <Link to="/account">
                 <button className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
-                  Account
+                  פרופיל
                 </button>
               </Link>
 
@@ -55,7 +55,7 @@ function Navbar() {
                 className="text-white  hover:text-blue-600  font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-3 md:mr-0"
                 onClick={handleLogout}
               >
-                Logout
+                התנתק
               </button>
             </div>
           )}
