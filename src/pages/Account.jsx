@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase.config";
 import { FaSpinner } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
 import Review from "../components/Review";

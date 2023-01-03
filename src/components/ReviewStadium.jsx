@@ -11,7 +11,7 @@ import {
   getDocs,
   getDoc,
 } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase.config";
 import { FaArrowDown } from "react-icons/fa";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";

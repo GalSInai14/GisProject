@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
-import { db } from "../firebase";
+import { db } from "../firebase.config";
 import { FaSpinner } from "react-icons/fa";
 import Review from "../components/Review";
 function Stadium() {
@@ -46,7 +46,7 @@ function Stadium() {
           });
           console.log(sumGrades);
           setAvgGrades(sumGrades / stadiumData.reviews.length);
-          console.log(avgGrades);
+          //console.log(avgGrades);
         }
       } catch (error) {
         console.log(error);
