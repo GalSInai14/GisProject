@@ -4,8 +4,8 @@ import { UserAuth } from "../context/AuthContext";
 import { useNavigate, useParams } from "react-router-dom";
 import { getDocs, collection, query, where } from "firebase/firestore";
 import { db } from "../firebase.config";
-import { FaSpinner } from "react-icons/fa";
 import Review from "../components/Review";
+import Spinner from "../components/Spinner";
 function Stadium() {
   const params = useParams();
   const navigate = useNavigate();
@@ -58,8 +58,8 @@ function Stadium() {
 
   if (loading) {
     return (
-      <div className="mt-10 flex items-center lg:text-5xl md:text-2xl sm:text-sm text-gray-900">
-        <FaSpinner />
+      <div className="flex items-center justify-center mt-20">
+        <Spinner />
       </div>
     );
   }
@@ -67,7 +67,7 @@ function Stadium() {
   return (
     <>
       <div className=" text-center mt-20">
-        <h1 className="font-bold text-5xl text-gray-900 mb-5">
+        <h1 className="font-bold lg:text-5xl md:text-3xl sm:text-2xl text-gray-900 mb-5">
           {stadiumData.stadiumName}{" "}
         </h1>
         <div className="flex flex-row-reverse px-7 mb-5">

@@ -2,6 +2,7 @@ import React from "react";
 import { UserAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
 import MapComponent from "../components/MapComponent";
+import Spinner from "../components/Spinner";
 import FilterBar from "../components/FilterBar";
 import { useState } from "react";
 
@@ -33,10 +34,8 @@ function Home() {
 
   if (loading) {
     return (
-      <div className="mt-10">
-        <h1 className="font-bold text-center lg:text-5xl text-grey-900 md:text-3xl sm:text-2xl">
-          Loading...
-        </h1>
+      <div className="flex items-center justify-center mt-20">
+        <Spinner />
       </div>
     );
   }

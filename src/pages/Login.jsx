@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -61,12 +62,11 @@ function Login() {
 
           <div className="text-grey-900 mt-6">
             חדשים בגיסטדיום?
-            <a
-              className="no-underline mr-3 font-bold border-b border-blue text-grey-900 hover:text-blue-700"
-              href="/register"
-            >
-              הירשמו כאן
-            </a>
+            <Link to="/register">
+              <h6 className="no-underline mr-3 font-bold border-b border-blue text-grey-900 hover:text-blue-700">
+                הירשמו כאן
+              </h6>
+            </Link>
           </div>
         </div>
       </div>

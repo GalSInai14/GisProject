@@ -15,7 +15,9 @@ function Footer() {
       <ul className="flex flex-wrap items-center mr-4 mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
         <Link to="/about">
           <li>
-            <h6 className="mr-4 hover:underline md:mr-6 ">קצת עלינו</h6>
+            <h6 className="mr-4 hover:font-bold hover:text-white md:mr-6 ">
+              קצת עלינו
+            </h6>
           </li>
         </Link>
       </ul>

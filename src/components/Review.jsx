@@ -55,14 +55,14 @@ function Review(props) {
                 )}
               </h1>
             </div>
-            <div className="flex flex-row-reverse">
+            <div className="flex flex-row-reverse ">
               <div className="flex flex-col">
                 <div className="flex flex-row-reverse mt-2 mb-2">
                   <h1 className="text-md font-bold ml-2 text-gray-900">
                     {" "}
                     :מתקני האצטדיון
                   </h1>
-                  <h1 className="text-md  text-blue-700">
+                  <h1 className="text-md  text-blue-700 rtl-grid">
                     {review.facilities}
                   </h1>
                 </div>
@@ -71,7 +71,7 @@ function Review(props) {
                     {" "}
                     :האווירה באצטדיון
                   </h1>
-                  <h1 className="text-md  text-blue-700">
+                  <h1 className="text-md  text-blue-700 rtl-grid">
                     {review.atmosphere}
                   </h1>
                 </div>
@@ -80,7 +80,9 @@ function Review(props) {
                     {" "}
                     :תמורה יחס למחיר
                   </h1>
-                  <h1 className="text-md  text-blue-700">{review.price}</h1>
+                  <h1 className="text-md  text-blue-700 rtl-grid">
+                    {review.price}
+                  </h1>
                 </div>
                 <div className="flex flex-row-reverse mt-2 mb-2">
                   <h1 className="text-md font-bold ml-2 text-gray-900">

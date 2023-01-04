@@ -13,6 +13,7 @@ import {
 } from "firebase/firestore";
 import { db } from "../firebase.config";
 import { FaArrowDown } from "react-icons/fa";
+import Spinner from "./Spinner";
 import { toast } from "react-toastify";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
@@ -85,7 +86,11 @@ function ReviewStadium(props) {
     }
 
     if (loading) {
-      return <h1>Loading...</h1>;
+      return (
+        <div className="flex items-center justify-center mt-20">
+          <Spinner />
+        </div>
+      );
     }
   };
   return (
@@ -98,7 +103,7 @@ function ReviewStadium(props) {
             </h1>
             <input
               type="text"
-              className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-center"
+              className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-center rtl-grid text-right"
               name="facilities"
               placeholder="איך היו מתקני האצטדיון? (שירותים, מזון וכו')"
               onChange={(e) => setFacilities(e.target.value)}
@@ -106,14 +111,14 @@ function ReviewStadium(props) {
 
             <input
               type="text"
-              className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-center"
+              className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-center rtl-grid text-right"
               name="atmosphere"
               placeholder=" (עידוד קהל, תפאורה) ?איך הייתה האווירה באצטדיון"
               onChange={(e) => setAtmosphere(e.target.value)}
             />
             <input
               type="text"
-              className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-center"
+              className="block border border-grey-light w-full p-3 rounded mb-4 placeholder:text-center rtl-grid text-right"
               name="price"
               placeholder="?האם מחיר הכרטיס היה הוגן"
               onChange={(e) => setPrice(e.target.value)}

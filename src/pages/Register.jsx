@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserAuth } from "../context/AuthContext";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 function Register() {
   const user = UserAuth();
@@ -71,12 +72,14 @@ function Register() {
 
           <div className="text-grey-900 mt-6">
             כבר רשומים לגיסטדיום ?
-            <a
-              className="no-underline mr-3 font-bold border-b border-blue text-grey-900 hover:text-blue-700"
-              href="/login"
-            >
-              התחברו כאן
-            </a>
+            <Link to="/login">
+              <h6
+                className="no-underline mr-3 font-bold border-b border-blue text-grey-900 hover:text-blue-700"
+                href="/login"
+              >
+                התחברו כאן
+              </h6>
+            </Link>
           </div>
         </div>
       </div>

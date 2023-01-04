@@ -81,11 +81,19 @@ function Account() {
           ביקורי האצטדיונים שלך
         </h1>
       </div>
-      <div className="flex justify-end mb-2">
-        <div className="flex flex-col  ">
-          <Review reviews={userData.reviews} isUser={true} />
+      {!userData.reviews[0] === [] ? (
+        <div className="flex justify-end mb-2">
+          <div className="flex flex-col  ">
+            <Review reviews={userData.reviews} isUser={true} />
+          </div>
         </div>
-      </div>
+      ) : (
+        <div className="flex flex-row-reverse px-7">
+          <h1 className="font-bold text-3xl text-gray-400">
+            ...לא ביקרת אף אצטדיון{" "}
+          </h1>
+        </div>
+      )}
     </>
   );
 }
