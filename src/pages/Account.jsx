@@ -81,7 +81,7 @@ function Account() {
           ביקורי האצטדיונים שלך
         </h1>
       </div>
-      {!userData.reviews[0] === [] ? (
+      {userData.reviews[0] !== [] ? (
         <div className="flex justify-end mb-2">
           <div className="flex flex-col  ">
             <Review reviews={userData.reviews} isUser={true} />
