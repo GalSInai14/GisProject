@@ -53,18 +53,23 @@ function Stadium() {
       </div>
     );
   }
+  let avg = 0;
 
-  const arrayGrades = [];
+  if (stadiumData?.reviews) {
+    const arrayGrades = [];
 
-  var sumGrades = 0;
-  stadiumData?.reviews.forEach((review) => {
-    arrayGrades.push(parseFloat(review.grade));
-  });
+    var sumGrades = 0;
+    stadiumData?.reviews.forEach((review) => {
+      arrayGrades.push(parseFloat(review.grade));
+    });
 
-  arrayGrades.forEach((grade) => {
-    sumGrades = sumGrades + grade;
-  });
-  const avg = sumGrades / arrayGrades.length;
+    arrayGrades.forEach((grade) => {
+      sumGrades = sumGrades + grade;
+    });
+    avg = sumGrades / arrayGrades.length;
+  } else {
+    console.log("there is no reviews here");
+  }
 
   return (
     <>

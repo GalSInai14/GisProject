@@ -87,7 +87,7 @@ function Review(props) {
                 <div className="flex flex-row-reverse mt-2 mb-2">
                   <h1 className="text-md font-bold ml-2 text-gray-900">
                     {" "}
-                    :הדירוג שלך
+                    :הדירוג
                   </h1>
                   <h1 className="text-md  text-blue-700">{review.grade}/5</h1>
                 </div>
