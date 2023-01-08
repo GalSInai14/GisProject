@@ -16,11 +16,9 @@ function Stadium() {
 
   const [stadiumData, setStadiumData] = useState();
   const [loading, setLoading] = useState(true);
-  const [avgGrades, setAvgGrades] = useState();
   if (!user) {
     navigate("/");
   }
-  const arrayGrades = [];
 
   useEffect(() => {
     const fetchStadiumData = async () => {
@@ -38,18 +36,13 @@ function Stadium() {
 
         setStadiumData(stadium[0].data);
 
-        stadiumData?.reviews.forEach((review) => {
-          arrayGrades.push(parseFloat(review.grade));
-        });
-
-        console.log(arrayGrades);
-
         setLoading(false);
       } catch (error) {
         console.log(error);
       }
     };
     fetchStadiumData();
+
     // eslint-disable-next-line
   }, []);
 
@@ -60,6 +53,18 @@ function Stadium() {
       </div>
     );
   }
+
+  const arrayGrades = [];
+
+  var sumGrades = 0;
+  stadiumData?.reviews.forEach((review) => {
+    arrayGrades.push(parseFloat(review.grade));
+  });
+
+  arrayGrades.forEach((grade) => {
+    sumGrades = sumGrades + grade;
+  });
+  const avg = sumGrades / arrayGrades.length;
 
   return (
     <>
@@ -88,7 +93,9 @@ function Stadium() {
               <h1 className="font-bold text-2xl text-gray-900 ml-2">
                 :ממוצע הדירוגים
               </h1>
-              <h1 className="font-bold text-2xl text-blue-700 ml-4">{}</h1>{" "}
+              <h1 className="font-bold text-2xl text-blue-700 ml-4">
+                {avg.toFixed(1)}
+              </h1>{" "}
             </>
           ) : (
             <div></div>
