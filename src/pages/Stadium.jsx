@@ -20,6 +20,7 @@ function Stadium() {
   if (!user) {
     navigate("/");
   }
+  const arrayGrades = [];
 
   useEffect(() => {
     const fetchStadiumData = async () => {
@@ -36,25 +37,21 @@ function Stadium() {
         });
 
         setStadiumData(stadium[0].data);
-        console.log(".$!.$!.");
-        // console.log(stadium[0].data.reviews);
+
+        stadiumData?.reviews.forEach((review) => {
+          arrayGrades.push(parseFloat(review.grade));
+        });
+
+        console.log(arrayGrades);
+
         setLoading(false);
-        if (stadiumData?.reviews) {
-          let sumGrades = 0;
-          stadiumData.reviews.forEach((review) => {
-            sumGrades = sumGrades + parseFloat(review.grade);
-          });
-          console.log(sumGrades);
-          setAvgGrades(sumGrades / stadiumData.reviews.length);
-          //console.log(avgGrades);
-        }
       } catch (error) {
         console.log(error);
       }
     };
     fetchStadiumData();
     // eslint-disable-next-line
-  }, [avgGrades]);
+  }, []);
 
   if (loading) {
     return (
@@ -91,9 +88,7 @@ function Stadium() {
               <h1 className="font-bold text-2xl text-gray-900 ml-2">
                 :ממוצע הדירוגים
               </h1>
-              <h1 className="font-bold text-2xl text-blue-700 ml-4">
-                {avgGrades}
-              </h1>{" "}
+              <h1 className="font-bold text-2xl text-blue-700 ml-4">{}</h1>{" "}
             </>
           ) : (
             <div></div>

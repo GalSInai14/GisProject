@@ -25,7 +25,7 @@ function Navbar() {
         <div className="container flex flex-wrap items-center justify-between mx-auto">
           <Link to="/">
             <h3 href="/" className="flex items-center">
-              <span className="self-center text-xl font-semibold whitespace-nowrap dark:text-white">
+              <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
                 GiStadium
               </span>
             </h3>
