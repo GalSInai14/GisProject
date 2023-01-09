@@ -17,13 +17,13 @@ function Login() {
     try {
       console.log(email);
       await logIn(email, password);
-      toast.success(`Logged in successfully!`);
+      toast.success("!ברוך הבא");
 
       navigate("/");
     } catch (err) {
       console.log(error);
       setError(err.message);
-      toast.error("Wrong password or Email! Please try again.");
+      toast.error(".אימייל או סיסמא לא נכונים, נסה שוב");
       console.log(err);
     }
   };

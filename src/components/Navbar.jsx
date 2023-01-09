@@ -11,11 +11,11 @@ function Navbar() {
   const handleLogout = async () => {
     try {
       await logOut();
-      toast.success("Logged out successfully. See you later!");
+      toast.success("!להתראות");
       navigate("/");
     } catch (err) {
       console.log(err);
-      toast.error("There is a problem, try again later please.");
+      toast.error(".הייתה בעיה, נסה שוב מאוחר יותר");
     }
   };
 

@@ -15,7 +15,6 @@ import { db } from "../firebase.config";
 import { FaArrowDown } from "react-icons/fa";
 import Spinner from "./Spinner";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 
 function ReviewStadium(props) {
@@ -26,7 +25,6 @@ function ReviewStadium(props) {
   const [price, setPrice] = useState("");
   const [grade, setGrade] = useState();
   const [loading, setLoading] = useState(true);
-  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -76,10 +74,11 @@ function ReviewStadium(props) {
       //         querySnap = await getDocs(q);
       setLoading(false);
       setShow(false);
-      navigate("/");
+
       props.onSubmit(show);
 
       toast.success(`! ${props.stadiumName} תודה שדירגת את `);
+      window.location.reload(false);
     } catch (error) {
       console.log(error.message);
       toast.error(".משהו לא עבד, נסה שוב מאוחר יותר");

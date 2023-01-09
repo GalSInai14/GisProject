@@ -16,10 +16,10 @@ function Register() {
     try {
       await signUp(name, email, password);
 
-      toast.success("Signed in successfully!");
+      toast.success("תודה שנרשמת, וברוך הבא!");
       navigate("/");
     } catch (err) {
-      toast.error("There was an error while signing up, try again please!");
+      toast.error(".הייתה בעיה, נסה שוב");
       console.log(err.message);
     }
     console.log(user);
