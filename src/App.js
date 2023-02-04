@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import NotFound from "./pages/NotFound";
 import Stadium from "./pages/Stadium";
+import AddStadium from "./pages/AddStadium";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import { AuthContextProvider } from "./context/AuthContext";
@@ -27,6 +28,7 @@ function App() {
               <Route path="/account" element={<Account />} />
               <Route path="/about" element={<About />} />
               <Route path="/stadium/:id" element={<Stadium />} />
+              <Route path="/add-stadium" element={<AddStadium />} />
               <Route path="/*" element={<NotFound />} />
             </Routes>
           </div>

@@ -2,11 +2,9 @@ import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import ReviewStadium from "./ReviewStadium";
-//import { useParams } from "react-router-dom";
-
 import L from "leaflet";
 //import { collection, getDocs, query, where } from "firebase/firestore";
-//import { db } from "../firebase";
+//import { db } from "../firebase.config";
 import { toast } from "react-toastify";
 
 const stadiumsFile = require("../data/stadiums.json");
@@ -106,6 +104,7 @@ function MapComponent(props) {
     const fetchStadiums = () => {
       try {
         let stadiums = [];
+
         for (let i in stadiumsFile) {
           stadiums.push(stadiumsFile[i]);
         }

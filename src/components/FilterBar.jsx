@@ -205,11 +205,10 @@ function FilterBar(props) {
   };
 
   const handleReload = (e) => {
-    e.preventDefault(e);
+    e.preventDefault();
     setCity(null);
     setTeam(null);
     setLeague(null);
-    window.location.reload(false);
   };
 
   return (
@@ -234,33 +233,41 @@ function FilterBar(props) {
             <div>
               <div className="grid sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-4 gap-4 mt-4">
                 <select
-                  onChange={handleTeamChange}
-                  className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-                >
-                  <option>קבוצה</option>
-                  {teams.map((t) => (
-                    <option key={t}>{t}</option>
-                  ))}
-                </select>
-
-                <select
-                  onChange={handleLeagueChange}
-                  className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
-                >
-                  <option>ליגה</option>
-                  {leagues.map((l) => (
-                    <option key={l}>{l}</option>
-                  ))}
-                </select>
-
-                <select
+                  value={city || ""}
                   onChange={handleCityChange}
                   className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
                 >
-                  <option>עיר</option>
-
+                  <option value="">עיר</option>
                   {cities.map((c) => (
-                    <option key={c}>{c}</option>
+                    <option key={c} value={c}>
+                      {c}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  value={team || ""}
+                  onChange={handleTeamChange}
+                  className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+                >
+                  <option value="">קבוצה</option>
+                  {teams.map((t) => (
+                    <option key={t} value={t}>
+                      {t}
+                    </option>
+                  ))}
+                </select>
+
+                <select
+                  value={league || ""}
+                  onChange={handleLeagueChange}
+                  className="px-4 py-3 w-full rounded-md bg-gray-100 border-transparent focus:border-gray-500 focus:bg-white focus:ring-0 text-sm"
+                >
+                  <option value="">ליגה</option>
+                  {leagues.map((l) => (
+                    <option key={l} value={l}>
+                      {l}
+                    </option>
                   ))}
                 </select>
               </div>
