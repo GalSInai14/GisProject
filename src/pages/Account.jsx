@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { UserAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
 import { doc, getDoc } from "firebase/firestore";
+import { Link } from "react-router-dom";
 import { db } from "../firebase.config";
 import { FaSpinner } from "react-icons/fa";
 import { AiOutlineStar } from "react-icons/ai";
@@ -92,6 +93,21 @@ function Account() {
           <h1 className="font-bold text-3xl text-gray-400">
             ...לא ביקרת אף אצטדיון{" "}
           </h1>
+        </div>
+      )}
+
+      {!userData?.admin ? (
+        <div></div>
+      ) : (
+        <div className="flex justify-center">
+          <Link to="/add-stadium">
+            <button
+              type="submit"
+              className="mt-8 lg:w-[100%] text-center text-white bg-blue-600 hover:bg-blue-800  focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5  mr-3 md:mr-0 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+            >
+              הוסף אצטדיון
+            </button>
+          </Link>
         </div>
       )}
     </>
